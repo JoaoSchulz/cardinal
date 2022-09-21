@@ -1,16 +1,18 @@
-package com.br.uniamerica.periodo.cardinalidade.cardinalidade.primeiroexercicio;
+package com.br.uniamerica.periodo.cardinalidade.cardinalidade.terceiraatividade;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "td_usuario", schema = "primeiraatividade")
+@Table(name = "td_usuario", schema = "terceiraatividade")
 public class Usuario extends AbstractEntity{
 
     @Getter @Setter
@@ -25,9 +27,6 @@ public class Usuario extends AbstractEntity{
     @Getter @Setter
     @Column(name = "senha", length = 20, nullable = false)
     private String senha;
-    @Getter @Setter
-    @JoinColumn(name = "id_endereco", nullable = false)
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
-    private Endereco endereco;
+
 
 }

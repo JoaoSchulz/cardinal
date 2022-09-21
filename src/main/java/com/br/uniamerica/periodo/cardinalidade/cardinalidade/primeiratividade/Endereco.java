@@ -1,4 +1,4 @@
-package com.br.uniamerica.periodo.cardinalidade.cardinalidade.primeiroexercicio;
+package com.br.uniamerica.periodo.cardinalidade.cardinalidade.primeiratividade;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
