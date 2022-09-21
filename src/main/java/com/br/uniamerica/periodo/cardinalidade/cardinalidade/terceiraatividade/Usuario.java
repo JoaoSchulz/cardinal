@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "td_usuario", schema = "terceiraatividade")
+@Table(name = "td_usuario", schema= "terceiraatividade")
 public class Usuario extends AbstractEntity{
 
     @Getter @Setter
