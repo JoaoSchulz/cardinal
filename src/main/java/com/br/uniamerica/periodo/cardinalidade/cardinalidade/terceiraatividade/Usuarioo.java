@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "td_usuario", schema= "terceiraatividade")
-public class Usuario extends AbstractEntity{
+@Table(name = "td_usuario1", schema= "terceiraatividade")
+public class Usuarioo extends AbstractEntity{
 
     @Getter @Setter
     @Column(name = "nome", length = 100, nullable = false)
@@ -27,6 +27,9 @@ public class Usuario extends AbstractEntity{
     @Getter @Setter
     @Column(name = "senha", length = 20, nullable = false)
     private String senha;
-
+    @Getter @Setter
+    @JoinColumn(name = "td_usuario", nullable = false)
+    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Telefone> telefone = new ArrayList<Telefone>();
 
 }
