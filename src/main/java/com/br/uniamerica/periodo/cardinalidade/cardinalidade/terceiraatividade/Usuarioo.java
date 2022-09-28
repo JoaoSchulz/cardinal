@@ -28,7 +28,7 @@ public class Usuarioo extends AbstractEntity{
     @Column(name = "senha", length = 20, nullable = false)
     private String senha;
     @Getter @Setter
-    @JoinColumn(name = "td_usuario", nullable = false)
+    @JoinColumn(name = "td_usuario1", nullable = false)
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Telefone> telefone = new ArrayList<Telefone>();
 

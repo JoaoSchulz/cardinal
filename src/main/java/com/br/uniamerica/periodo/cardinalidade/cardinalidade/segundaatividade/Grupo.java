@@ -22,7 +22,9 @@ public class Grupo extends AbstractEntity{
     @Column(name = "descricao", length = 255, nullable = false)
     private String descricao;
     @Getter @Setter
-    @JoinColumn(name = "permissao", nullable = false)
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Permissao> permissao = new ArrayList<Permissao>();
+    @JoinTable(name = "grupo_permissao", schema = "segundaatividade",
+            joinColumns = @JoinColumn(name = "id_grupo"),
+            inverseJoinColumns = @JoinColumn(name = "id_permissao"))
+    private List<Permissao> permissaos;
 }

@@ -5,9 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -30,5 +29,7 @@ public class Permissao extends AbstractEntity{
     @Getter @Setter
     @Column(name = "acao", length = 100, nullable = false)
     private String acao;
-
+    @Getter@Setter
+    @ManyToMany(mappedBy ="permissaos")
+    private List<Grupo> grupos;
 }
